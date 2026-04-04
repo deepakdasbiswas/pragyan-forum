@@ -5,18 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News | Pragyan Forum</title>
     <style>
-        /* Fade-in Animation */
         body {
             animation: fadeInPage 0.5s ease-in-out;
-        }
-
-        @keyframes fadeInPage {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Base Styling & Background */
-        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -30,8 +20,9 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
         }
+
+        @keyframes fadeInPage { from { opacity: 0; } to { opacity: 1; } }
         
-        /* Navigation Bar */
         nav {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
@@ -43,141 +34,68 @@
             top: 0;
             z-index: 100;
         }
-        nav a {
-            color: #222;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 700;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #fff;
-        }
+        nav a { color: #222; text-decoration: none; margin: 0 20px; font-weight: 700; font-size: 1.1em; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; }
+        nav a:hover { color: #fff; }
 
-        .container {
-            width: 90%;
-            max-width: 850px;
-            margin: 50px auto;
-        }
+        .container { width: 90%; max-width: 850px; margin: 50px auto; }
 
-        /* Page Header */
         .page-header {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-            animation: slideUp 0.8s ease-out forwards;
+            text-align: center; background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); margin-bottom: 40px; animation: slideUp 0.8s ease-out forwards;
         }
+        .page-header h1 { margin: 0 0 10px 0; font-size: 3em; letter-spacing: -1px; color: #111; }
+        .page-header p { font-size: 1.2em; color: #333; margin: 0; font-weight: 500; }
 
-        .page-header h1 {
-            margin: 0 0 10px 0;
-            font-size: 3em;
-            letter-spacing: -1px;
-            color: #111;
-        }
-        .page-header p {
-            font-size: 1.2em;
-            color: #333;
-            margin: 0;
-            font-weight: 500;
-        }
-
-        /* News List */
-        .article-list {
-            list-style: none;
-            padding: 0;
-        }
-        .article-list li {
+        /* Clickable News Card */
+        .news-card {
             background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            margin-bottom: 30px;
-            padding: 35px 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: slideUp 0.8s ease-out 0.2s forwards;
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 30px; padding: 35px 40px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease; opacity: 0; animation: slideUp 0.8s ease-out 0.2s forwards;
+            cursor: pointer; /* Makes it look clickable */
         }
-        
-        .article-list li:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-            background: rgba(255, 255, 255, 0.6);
+        .news-card:hover {
+            transform: translateY(-4px); box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); background: rgba(255, 255, 255, 0.6);
         }
 
-        /* Category Pill Tags */
-        .category-tag {
-            display: inline-block;
-            background: #b33939; /* Red tone for News */
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-        
-        .post-title {
-            text-decoration: none;
-            color: #111;
-            font-size: 1.8em;
-            font-weight: 700;
-            display: block; 
-            line-height: 1.3;
-        }
-        .date {
-            font-size: 1em;
-            color: #555;
-            display: block;
-            margin-top: 8px;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            padding-bottom: 15px;
-            margin-bottom: 20px;
+        .category-tag { display: inline-block; background: #b33939; color: #fff; padding: 5px 12px; border-radius: 20px; font-size: 0.8em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .post-title { color: #111; font-size: 1.8em; font-weight: 700; margin: 0; line-height: 1.3; }
+        .date { font-size: 1em; color: #555; display: block; margin-top: 8px; font-weight: 500; }
+        .read-more { color: #b33939; font-weight: bold; margin-top: 15px; display: inline-block; font-size: 1.1em; }
+
+        /* The Popup Modal (Hidden by default) */
+        .modal {
+            display: none; /* Hidden */
+            position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6); /* Dark backdrop */
+            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            align-items: center; justify-content: center;
         }
 
-        /* News Content Specific Styling */
-        .news-content {
-            font-size: 1.15em;
-            color: #222;
-        }
-        .news-content p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        .news-content h4 {
-            margin: 30px 0 10px 0;
-            color: #111;
-            font-size: 1.3em;
-            border-left: 4px solid #b33939;
-            padding-left: 12px;
-        }
-        .source-text {
-            margin-top: 30px;
-            font-style: italic;
-            font-size: 0.95em;
-            color: #444;
-            text-align: right;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            padding-top: 15px;
+        /* Modal Content Box */
+        .modal-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px; border-radius: 20px; width: 90%; max-width: 800px;
+            max-height: 80vh; overflow-y: auto; /* Allows scrolling inside the popup */
+            position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            animation: popIn 0.3s ease-out forwards;
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* The Close Button */
+        .close-btn {
+            position: absolute; top: 20px; right: 30px; color: #555; font-size: 35px; font-weight: bold; cursor: pointer; transition: color 0.2s ease;
         }
+        .close-btn:hover { color: #b33939; }
+
+        /* Inside Modal Text Styling */
+        .modal-content h2 { margin-top: 0; font-size: 2em; line-height: 1.2; }
+        .modal-content .news-text { font-size: 1.15em; color: #222; margin-top: 20px; }
+        .modal-content p { margin-bottom: 15px; text-align: justify; }
+        .modal-content h4 { margin: 30px 0 10px 0; color: #111; font-size: 1.3em; border-left: 4px solid #b33939; padding-left: 12px; }
+        .modal-content .source-text { margin-top: 30px; font-style: italic; font-size: 0.95em; color: #444; text-align: right; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px; }
+
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
     </style>
 </head>
 <body>
@@ -190,49 +108,64 @@
     </nav>
 
     <div class="container">
-        
         <div class="page-header">
             <h1>News & Analysis</h1>
             <p>Tracking geopolitical shifts, internal security, and regional dynamics.</p>
         </div>
 
-        <ul class="article-list">
-            
-            <li>
-                <span class="category-tag">News</span>
-                <h2 class="post-title">Police arrest the ‘mastermind’ of Malda violence</h2>
-                <span class="date">April 5, 2026</span>
-                
-                <div class="news-content">
-                    <p>Moffakkerul Islam, the alleged mastermind behind the Malda violence where judicial officials were held hostage, was on Friday arrested by the West Bengal Police.</p>
-                    
-                    <p>Mr. Islam, a lawyer and resident of Itahar in Uttar Dinajpur district, was seen making speeches outside the block development office (BDO) at Kaliachak II block and urging the crowd not to leave the area. He had contested the 2021 Assembly polls as a candidate of the All India Majlis-e-Ittehadul Muslimeen (AIMIM).</p>
-                    
-                    <p>K. Jayaraman, Inspector-General of Police, North Bengal, told media persons in Malda on Friday that Mr. Islam was detained while fleeing the State from Bagdogra airport. He added that 35 persons were arrested for the violence and 19 cases have been initiated. The police officer said that people have a right to protest but they cannot resort to violence.</p>
-                    
-                    <p>The Election Commission (EC) on Thursday asked the NIA to probe the violence in Malda district.</p>
-                    
-                    <h4>NIA team reaches Malda</h4>
-                    <p>A team of the National Investigation Agency (NIA) visited Mothabari and Kaliachak police stations in Malda district to conduct a probe into the gherao of seven judicial officers by protesting locals over the deletion of names in the special intensive revision (SIR) exercise. The NIA team consists of 24 members led by a senior official.</p>
-                    
-                    <p>The officers, who had gone to Kaliachak for judicial adjudication work, were gheraoed by a mob for several hours.</p>
-                    
-                    <p>The Supreme Court had said gheraoing of the seven judicial officers was not only a “brazen attempt” to browbeat the officers but amounted to a challenge to the authority of the top court.</p>
-                    
-                    <h4>Mamata shifts blame</h4>
-                    <p>West Bengal Chief Minister Mamata Banerjee on Friday blamed AIMIM and the Indian Secular Front (ISF) for the gherao of judicial officers and accused the Congress and the BJP of instigation.</p>
-                    
-                    <p>“The BJP loaned him (the accused) from the AIMIM and brought him here,” the Trinamool Congress chairperson claimed, while addressing an election rally at Harirampur in Dakshin Dinajpur district.</p>
-                    
-                    <p>Ms. Banerjee emphasised that the mastermind behind the gherao of the judicial officers was arrested by the State’s CID, and claimed that the police is still under her control and not the EC.</p>
-                </div>
-                
-                <div class="source-text">Source : The Hindu</div>
-            </li>
-
-        </ul>
-
+        <div class="news-card" onclick="openModal('maldaModal')">
+            <span class="category-tag">News</span>
+            <h2 class="post-title">Police arrest the ‘mastermind’ of Malda violence</h2>
+            <span class="date">April 5, 2026</span>
+            <span class="read-more">Click to read full report →</span>
+        </div>
     </div>
+
+    <div id="maldaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('maldaModal')">&times;</span>
+            
+            <span class="category-tag">News</span>
+            <h2>Police arrest the ‘mastermind’ of Malda violence</h2>
+            <span class="date">April 5, 2026</span>
+            
+            <div class="news-text">
+                <p>Moffakkerul Islam, the alleged mastermind behind the Malda violence where judicial officials were held hostage, was on Friday arrested by the West Bengal Police.</p>
+                <p>Mr. Islam, a lawyer and resident of Itahar in Uttar Dinajpur district, was seen making speeches outside the block development office (BDO) at Kaliachak II block and urging the crowd not to leave the area. He had contested the 2021 Assembly polls as a candidate of the All India Majlis-e-Ittehadul Muslimeen (AIMIM).</p>
+                <p>K. Jayaraman, Inspector-General of Police, North Bengal, told media persons in Malda on Friday that Mr. Islam was detained while fleeing the State from Bagdogra airport. He added that 35 persons were arrested for the violence and 19 cases have been initiated. The police officer said that people have a right to protest but they cannot resort to violence.</p>
+                <p>The Election Commission (EC) on Thursday asked the NIA to probe the violence in Malda district.</p>
+                
+                <h4>NIA team reaches Malda</h4>
+                <p>A team of the National Investigation Agency (NIA) visited Mothabari and Kaliachak police stations in Malda district to conduct a probe into the gherao of seven judicial officers by protesting locals over the deletion of names in the special intensive revision (SIR) exercise. The NIA team consists of 24 members led by a senior official.</p>
+                <p>The officers, who had gone to Kaliachak for judicial adjudication work, were gheraoed by a mob for several hours.</p>
+                <p>The Supreme Court had said gheraoing of the seven judicial officers was not only a “brazen attempt” to browbeat the officers but amounted to a challenge to the authority of the top court.</p>
+                
+                <h4>Mamata shifts blame</h4>
+                <p>West Bengal Chief Minister Mamata Banerjee on Friday blamed AIMIM and the Indian Secular Front (ISF) for the gherao of judicial officers and accused the Congress and the BJP of instigation.</p>
+                <p>“The BJP loaned him (the accused) from the AIMIM and brought him here,” the Trinamool Congress chairperson claimed, while addressing an election rally at Harirampur in Dakshin Dinajpur district.</p>
+                <p>Ms. Banerjee emphasised that the mastermind behind the gherao of the judicial officers was arrested by the State’s CID, and claimed that the police is still under her control and not the EC.</p>
+            </div>
+            
+            <div class="source-text">Source : The Hindu</div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close the modal if the user clicks outside of the white content box
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
