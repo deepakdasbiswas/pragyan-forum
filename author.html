@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pragyan Forum</title>
+    <title>Author | Pragyan Forum</title>
     <style>
         /* Fade-in Animation */
         body {
@@ -18,20 +18,19 @@
         /* Base Styling & Background */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             margin: 0;
             padding: 0;
             color: #1a1a1a;
             overflow-x: hidden;
             background-image: url('bg.jpg'); 
-            background-color: #2c3e50; /* Updated fallback color */
+            background-color: #2c3e50; 
             background-size: cover; 
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
         }
         
-        /* Navigation Bar */
         nav {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
@@ -59,104 +58,65 @@
 
         .container {
             width: 90%;
-            max-width: 850px;
+            max-width: 800px;
             margin: 50px auto;
         }
 
-        /* Hero Section */
-        .hero-section {
+        /* The Author Card Styling */
+        .author-card {
             text-align: center;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 50px;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
             animation: slideUp 0.8s ease-out forwards;
         }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.9);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
 
-        .hero-section h1 {
-            margin: 0 0 10px 0;
-            font-size: 3.5em;
-            letter-spacing: -1px;
+        .author-card h1 {
+            margin: 0 0 5px 0;
+            font-size: 2.8em;
+            letter-spacing: -0.5px;
             color: #111;
         }
-        .hero-section p {
+        
+        .author-card h3 {
+            margin: 0 0 25px 0;
+            color: #444;
+            font-weight: 500;
             font-size: 1.2em;
-            color: #333;
-            margin: 0;
-            font-weight: 500;
-        }
-
-        /* Section Header for "Recent" */
-        .section-header {
-            text-align: left;
-            margin-bottom: 20px;
-            padding-left: 10px;
-            opacity: 0;
-            animation: slideUp 0.8s ease-out 0.2s forwards;
-        }
-        .section-header h2 {
-            font-size: 2.2em;
-            color: #111;
-            margin: 0;
-            letter-spacing: -1px;
-        }
-
-        /* Article & News List */
-        .article-list {
-            list-style: none;
-            padding: 0;
-        }
-        .article-list li {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            margin-bottom: 20px;
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: slideUp 0.8s ease-out 0.3s forwards;
-        }
-        
-        .article-list li:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-            background: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Category Pill Tags */
-        .category-tag {
-            display: inline-block;
-            background: #111;
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+        }
+
+        .bio-text {
+            font-size: 1.25em;
+            color: #222;
+            text-align: justify;
+            text-align-last: center;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .bio-text p {
             margin-bottom: 15px;
-        }
-        
-        .article-list a {
-            text-decoration: none;
-            color: #111;
-            font-size: 1.5em;
-            font-weight: 700;
-            display: block; /* Makes the title break to a new line below the tag */
-        }
-        .date {
-            font-size: 1em;
-            color: #555;
-            display: block;
-            margin-top: 10px;
-            font-weight: 500;
         }
 
         @keyframes slideUp {
@@ -170,35 +130,23 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="#">Articles</a>
-        <a href="#">News</a> <a href="author.html">Author</a>
+        <a href="#">News</a>
+        <a href="author.html">Author</a>
     </nav>
 
     <div class="container">
         
-        <div class="hero-section">
-            <h1>Pragyan Forum</h1>
-            <p>Decoding technology, logic, and the mechanics of the world.</p>
-        </div>
-
-        <div class="section-header">
-            <h2>Recent</h2>
-        </div>
-
-        <ul class="article-list">
+        <div class="author-card">
+            <img src="profile.jpg" alt="Deepak Das Biswas" class="profile-img">
             
-            <li>
-                <span class="category-tag">News</span>
-                <a href="#">Intelligence Shifts in South Asia: A Weekly Briefing</a>
-                <span class="date">April 5, 2026</span>
-            </li>
+            <h1>Deepak Das Biswas</h1>
+            <h3>Researcher & Writer</h3>
             
-            <li style="animation-delay: 0.5s;">
-                <span class="category-tag">Article</span>
-                <a href="first-article.html">The Logic Behind the Code: My First Post</a>
-                <span class="date">April 4, 2026</span>
-            </li>
-
-        </ul>
+            <div class="bio-text">
+                <p>Deepak Das Biswas is a young researcher and writer based in Kolkata. Passionate about history, geopolitics, and national security, he combines analytical thinking with thorough research to uncover the hidden truths behind global conflicts.</p>
+                <p>His writings primarily focus on terrorism, intelligence operations, and the complex political dynamics shaping South Asia.</p>
+            </div>
+        </div>
 
     </div>
 
