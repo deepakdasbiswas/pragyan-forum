@@ -24,7 +24,7 @@
             color: #1a1a1a;
             overflow-x: hidden;
             background-image: url('bg.jpg'); 
-            background-color: #2c3e50; /* Updated fallback color */
+            background-color: #2c3e50; 
             background-size: cover; 
             background-position: center;
             background-attachment: fixed;
@@ -115,7 +115,7 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             margin-bottom: 20px;
-            padding: 25px;
+            padding: 25px 30px;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.5);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -125,7 +125,7 @@
         }
         
         .article-list li:hover {
-            transform: translateY(-8px);
+            transform: translateY(-4px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
             background: rgba(255, 255, 255, 0.6);
         }
@@ -144,19 +144,47 @@
             margin-bottom: 15px;
         }
         
-        .article-list a {
+        .article-list a.post-title {
             text-decoration: none;
             color: #111;
-            font-size: 1.5em;
+            font-size: 1.6em;
             font-weight: 700;
-            display: block; /* Makes the title break to a new line below the tag */
+            display: block; 
+            line-height: 1.3;
         }
         .date {
             font-size: 1em;
             color: #555;
             display: block;
-            margin-top: 10px;
+            margin-top: 8px;
             font-weight: 500;
+        }
+
+        /* News Content Specific Styling */
+        .news-content {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #222;
+        }
+        .news-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .news-content h4 {
+            margin: 25px 0 10px 0;
+            color: #111;
+            font-size: 1.2em;
+            border-left: 4px solid #111;
+            padding-left: 10px;
+        }
+        .source-text {
+            margin-top: 25px;
+            font-style: italic;
+            font-size: 0.9em;
+            color: #444;
+            text-align: right;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 15px;
         }
 
         @keyframes slideUp {
@@ -170,7 +198,8 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="#">Articles</a>
-        <a href="#">News</a> <a href="author.html">Author</a>
+        <a href="#">News</a>
+        <a href="author.html">Author</a>
     </nav>
 
     <div class="container">
@@ -187,14 +216,40 @@
         <ul class="article-list">
             
             <li>
-                <span class="category-tag">News</span>
-                <a href="#">Intelligence Shifts in South Asia: A Weekly Briefing</a>
+                <span class="category-tag" style="background-color: #b33939;">News</span>
+                <a href="#" class="post-title">Police arrest the ‘mastermind’ of Malda violence</a>
                 <span class="date">April 5, 2026</span>
+                
+                <div class="news-content">
+                    <p>Moffakkerul Islam, the alleged mastermind behind the Malda violence where judicial officials were held hostage, was on Friday arrested by the West Bengal Police.</p>
+                    
+                    <p>Mr. Islam, a lawyer and resident of Itahar in Uttar Dinajpur district, was seen making speeches outside the block development office (BDO) at Kaliachak II block and urging the crowd not to leave the area. He had contested the 2021 Assembly polls as a candidate of the All India Majlis-e-Ittehadul Muslimeen (AIMIM).</p>
+                    
+                    <p>K. Jayaraman, Inspector-General of Police, North Bengal, told media persons in Malda on Friday that Mr. Islam was detained while fleeing the State from Bagdogra airport. He added that 35 persons were arrested for the violence and 19 cases have been initiated. The police officer said that people have a right to protest but they cannot resort to violence.</p>
+                    
+                    <p>The Election Commission (EC) on Thursday asked the NIA to probe the violence in Malda district.</p>
+                    
+                    <h4>NIA team reaches Malda</h4>
+                    <p>A team of the National Investigation Agency (NIA) visited Mothabari and Kaliachak police stations in Malda district to conduct a probe into the gherao of seven judicial officers by protesting locals over the deletion of names in the special intensive revision (SIR) exercise. The NIA team consists of 24 members led by a senior official.</p>
+                    
+                    <p>The officers, who had gone to Kaliachak for judicial adjudication work, were gheraoed by a mob for several hours.</p>
+                    
+                    <p>The Supreme Court had said gheraoing of the seven judicial officers was not only a “brazen attempt” to browbeat the officers but amounted to a challenge to the authority of the top court.</p>
+                    
+                    <h4>Mamata shifts blame</h4>
+                    <p>West Bengal Chief Minister Mamata Banerjee on Friday blamed AIMIM and the Indian Secular Front (ISF) for the gherao of judicial officers and accused the Congress and the BJP of instigation.</p>
+                    
+                    <p>“The BJP loaned him (the accused) from the AIMIM and brought him here,” the Trinamool Congress chairperson claimed, while addressing an election rally at Harirampur in Dakshin Dinajpur district.</p>
+                    
+                    <p>Ms. Banerjee emphasised that the mastermind behind the gherao of the judicial officers was arrested by the State’s CID, and claimed that the police is still under her control and not the EC.</p>
+                </div>
+                
+                <div class="source-text">Source : The Hindu</div>
             </li>
             
             <li style="animation-delay: 0.5s;">
                 <span class="category-tag">Article</span>
-                <a href="first-article.html">The Logic Behind the Code: My First Post</a>
+                <a href="first-article.html" class="post-title">The Logic Behind the Code: My First Post</a>
                 <span class="date">April 4, 2026</span>
             </li>
 
