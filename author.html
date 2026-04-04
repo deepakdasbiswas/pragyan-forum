@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author | Pragyan Forum</title>
+    <style>
+	body {
+            animation: fadeInPage 0.5s ease-in-out;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* We use the exact same background and styling to keep the site consistent */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            background-image: url('bg.jpg'); 
+            background-color: #2c3e50; 
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: #222;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 700;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        /* The Author Card Styling */
+        .author-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.9);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        .author-card h1 {
+            margin: 0 0 5px 0;
+            font-size: 2.8em;
+            letter-spacing: -0.5px;
+            color: #111;
+        }
+        
+        .author-card h3 {
+            margin: 0 0 25px 0;
+            color: #444;
+            font-weight: 500;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .bio-text {
+            font-size: 1.25em;
+            color: #222;
+            text-align: justify;
+            text-align-last: center;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .bio-text p {
+            margin-bottom: 15px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Articles</a>
+        <a href="#">Forum</a>
+        <a href="author.html">Author</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="author-card">
+            <img src="profile.jpg" alt="Deepak Das Biswas" class="profile-img">
+            
+            <h1>Deepak Das Biswas</h1>
+            <h3>Researcher & Writer</h3>
+            
+            <div class="bio-text">
+                <p>Deepak Das Biswas is a young researcher and writer based in Kolkata. Passionate about history, geopolitics, and national security, he combines analytical thinking with thorough research to uncover the hidden truths behind global conflicts.</p>
+                <p>His writings primarily focus on terrorism, intelligence operations, and the complex political dynamics shaping South Asia.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
